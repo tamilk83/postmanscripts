@@ -1,0 +1,190 @@
+{
+	"info": {
+		"_postman_id": "52dc4971-a736-4060-8522-18701cfc475b",
+		"name": "Code reusability Hackathon 2020",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "External APIs",
+			"item": [
+				{
+					"name": "GlobalSearch",
+					"item": [
+						{
+							"name": "ExternalAPI-GlobalSearchCompany Happy Case",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9f6d164e-ea73-4c80-ac87-6b2d5d7103db",
+										"exec": [
+											"//var jsonData = JSON.parse(responseBody);",
+											"var jsonData = pm.response.json();",
+											"pm.environment.set(\"companyId\", jsonData.searchResults[0].companyId);",
+											"pm.environment.set(\"revenue\", jsonData.searchResults[0].revenue);",
+											"pm.environment.set(\"sicCode\", jsonData.searchResults[0].sicCode);",
+											"pm.environment.set(\"companyName\", jsonData.searchResults[0].companyName);",
+											"pm.environment.set(\"companySize\", jsonData.searchResults[0].companySize);",
+											"pm.environment.set(\"region\", jsonData.searchResults[0].region);",
+											"",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{api-key}}"
+									}
+								],
+								"url": {
+									"raw": "https://api.cybcube.com/v10/account/searchCompany?companyToken={{company}}\n",
+									"protocol": "https",
+									"host": [
+										"api",
+										"cybcube",
+										"com"
+									],
+									"path": [
+										"v10",
+										"account",
+										"searchCompany"
+									],
+									"query": [
+										{
+											"key": "companyToken",
+											"value": "{{company}}\n"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "CompanyScoring",
+					"item": [
+						{
+							"name": "ExternalAPI-runCompanyScoring v1.0 - HappyCase",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9f34ac2a-fcc8-4b61-9dec-92d6d4c50fd4",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{api-key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"companyId\":\"{{companyId}}\",\"revenue\":\"{{revenue}}\",\"sicCode\":\"{{sicCode}}\",\"companyName\":\"{{companyName}}\",\"companySize\":\"{{companySize}}\",\"region\":\"{{region}}\"}\n"
+								},
+								"url": {
+									"raw": "https://api.cybcube.com/v10/account/companyScoreAnalysis",
+									"protocol": "https",
+									"host": [
+										"api",
+										"cybcube",
+										"com"
+									],
+									"path": [
+										"v10",
+										"account",
+										"companyScoreAnalysis"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ExternalAPI-runCompanyScoring V1.1 - HappyCase",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "d5371283-7b84-4fd0-b341-338c2c26b49d",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{api-key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"companyId\":\"{{companyId}}\",\"revenue\":\"{{revenue}}\",\"sicCode\":\"{{sicCode}}\",\"companyName\":\"{{companyName}}\",\"companySize\":\"{{companySize}}\",\"region\":\"{{region}}\"}\n"
+								},
+								"url": {
+									"raw": "https://api.cybcube.com/v11/account/companyScoreAnalysis",
+									"protocol": "https",
+									"host": [
+										"api",
+										"cybcube",
+										"com"
+									],
+									"path": [
+										"v11",
+										"account",
+										"companyScoreAnalysis"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

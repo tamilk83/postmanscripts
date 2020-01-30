@@ -10,4 +10,8 @@ These instructions will get you started with postman run in CLI
 * postman
 * newman
 
+### Installation
+
+$ npm install -g newman
+
 ### Deployment

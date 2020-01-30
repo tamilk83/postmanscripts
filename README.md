@@ -29,6 +29,6 @@ $ brew install newman
 
 ```newman run -d company.csv Code_reusabilityHackathon2020.collection.json -e Hackathon2020.postman_environment.json --delay-request 500```
 
-* How to run the script from postman:
-...Import the collection json to postman
-...Import the env variable to postman
+* How to run the script from postman
+..1.Import the collection json to postman
+..2.Import the env variable to postman

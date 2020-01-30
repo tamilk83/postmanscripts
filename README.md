@@ -27,8 +27,8 @@ $ brew install newman
 * Download the files and store it in a location
 * How to run the collection from CLI:
 
-newman run -d company.csv Code_reusabilityHackathon2020.collection.json -e Hackathon2020.postman_environment.json --delay-request 500
+```newman run -d company.csv Code_reusabilityHackathon2020.collection.json -e Hackathon2020.postman_environment.json --delay-request 500```
 
 * How to run the script from postman:
-** Import the collection json to postman
-** mport the env variable to postman
+...Import the collection json to postman
+...Import the env variable to postman

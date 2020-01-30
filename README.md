@@ -15,10 +15,10 @@ These instructions will get you started with postman run in CLI
 Install postman App from - https://www.getpostman.com/
 
 Using NPM:
-$ npm install -g newman
+`$ npm install -g newman`
 
 Using Brew:
-$ brew install newman
+`$ brew install newman`
 
 
 
@@ -30,5 +30,6 @@ $ brew install newman
 ```newman run -d company.csv Code_reusabilityHackathon2020.collection.json -e Hackathon2020.postman_environment.json --delay-request 500```
 
 * How to run the script from postman
-..1.Import the collection json to postman
-..2.Import the env variable to postman
+
+1.Import the collection json to postman
+2.Import the env variable to postman
